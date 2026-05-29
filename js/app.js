@@ -1,8 +1,18 @@
+const form = document.getElementById("form");
+
 const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputMedicamento = document.getElementById("medicamento");
 const inputData = document.getElementById ("data");
 const inputQtd = document.getElementById("qtd_dosagem")
+const inputreset = document.getElementById("resetartudo");
+const dosagem = document.querySelectorAll('input[nome=dosagem]');
+
+
+
+
+
+
 
 const keyNome = "mh-nome";
 const keyEmail = "mh-email";
@@ -35,6 +45,7 @@ inputEmail.addEventListener("input", salvarEmail);
 inputMedicamento.addEventListener("input", salvarMedicamento);
 inputData.addEventListener("change", salvarData);
 inputQtd.addEventListener("change", salvarQtd);
+inputreset.addEventListener("click", resetar)
 
 function carregarDados () {
 const nomeSalvo = localStorage.getItem("mh-nome");
@@ -62,7 +73,7 @@ inputData.value = dataSalva;
 }
 
 function resetar () {
-localStorage.clear();
+    localStorage.clear();
 }
 
 //resetar();
